@@ -50,13 +50,13 @@ export default function Game() {
 
   return (
     <div className="flex h-screen w-screen flex-col items-center justify-between overflow-hidden">
-      <div className="fixed bottom-0 right-0 h-40 w-40 text-8xl animate-ping font-black text-white">
+      <div className="fixed bottom-0 right-0 h-40 w-40 text-8xl animate-ping font-black text-accent-color">
         {secondsLeft || ""}
       </div>
-      <div className="flex grow basis-1/3 w-screen text-5xl items-center justify-center text-center bg-pink-500 text-white">
+      <div className="flex grow basis-1/3 w-screen text-5xl items-center justify-center text-center bg-secondary-color text-accent-color">
         <p>{mode === "Q" ? question.question : question.answer}</p>
       </div>
-      <div className="flex grow basis-2/3 w-screen text-7xl items-center justify-center text-center bg-indigo-500 text-white">
+      <div className="flex grow basis-2/3 w-screen text-7xl items-center justify-center text-center bg-primary-color text-accent-color">
         <p className="animate-bounce">{question.riddle}</p>
       </div>
     </div>

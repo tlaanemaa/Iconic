@@ -3,21 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --foreground-hex: #ec407a;
-  --background-start-hex: #fafafa;
-  --background-end-hex: #fafafa;
+  --primary-color: #3f51b5;
+  --secondary-color: #9c27b0;
+  --accent-color: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-hex: #cfd8dc;
-    --background-start-hex: #795548;
-    --background-end-hex: #bf360c;
+    --primary-color: #3f51b5;
+    --secondary-color: #9c27b0;
+    --accent-color: #ffffff;
   }
 }
 
 body {
-  color: var(--foreground-hex);
-  background: linear-gradient(to bottom, transparent, var(--background-end-hex))
-    var(--background-start-hex);
+  color: var(--accent-color);
+  background: var(--primary-color);
 }
