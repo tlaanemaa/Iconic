@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { selectRandom, wait } from "./utils";
 import { questions } from "./questions";
 
-const defaultQuestionTime = 10000;
-const defaultAnswerTime = 3000;
+const defaultQuestionTime = 10;
+const defaultAnswerTime = 3;
 
 export default function Game() {
   const [mode, setMode] = useState<"Q" | "A">("Q");
@@ -18,8 +18,8 @@ export default function Game() {
       setMode("Q");
       const question = selectRandom(questions);
       setQuestion(question);
-      const qTime = question.questionTimeMs ?? defaultQuestionTime;
-      const aTime = question.answerTimeMs ?? defaultAnswerTime;
+      const qTime = (question.questionTime ?? defaultQuestionTime) * 1000;
+      const aTime = (question.answerTime ?? defaultAnswerTime) * 1000;
 
       let qTimeLeft = qTime;
       const tickInterval = 1000;
