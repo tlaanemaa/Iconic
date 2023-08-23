@@ -5,7 +5,7 @@ import { selectRandom, wait } from "./utils";
 import { questions } from "./questions";
 
 const defaultQuestionTime = 10;
-const defaultAnswerTime = 3;
+const defaultAnswerTime = 5;
 
 export default function Game() {
   const [mode, setMode] = useState<"Q" | "A">("Q");

@@ -23,7 +23,7 @@ export const questions: Question[] = [
   },
   {
     question: "What kind of drink is this?",
-    riddle: "🥘 + 🎩",
-    answer: "Panhat",
+    riddle: "🍓 + 🥛 + 🤝",
+    answer: "strawberry milkshake",
   },
 ];
