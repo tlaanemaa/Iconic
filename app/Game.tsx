@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 import { selectRandom, wait } from "./utils";
 import { questions } from "./questions";
 
-const defaultQuestionTime = 10;
+const defaultQuestionTime = 15;
 const defaultAnswerTime = 5;
+let iteration = 0;
 
 export default function Game() {
   const [mode, setMode] = useState<"Q" | "A">("Q");
@@ -16,7 +17,8 @@ export default function Game() {
     const ac = new AbortController();
     const runQaLoop = async (): Promise<void> => {
       setMode("Q");
-      const question = selectRandom(questions);
+      iteration = (iteration + 1) % questions.length
+      const question = questions[iteration];
       setQuestion(question);
       const qTime = (question.questionTime ?? defaultQuestionTime) * 1000;
       const aTime = (question.answerTime ?? defaultAnswerTime) * 1000;
