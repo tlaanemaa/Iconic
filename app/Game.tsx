@@ -17,7 +17,7 @@ export default function Game() {
     const ac = new AbortController();
     const runQaLoop = async (): Promise<void> => {
       setMode("Q");
-      iteration = (iteration + 1) % questions.length
+      iteration = (iteration + 1) % questions.length;
       const question = questions[iteration];
       setQuestion(question);
       const qTime = (question.questionTime ?? defaultQuestionTime) * 1000;
